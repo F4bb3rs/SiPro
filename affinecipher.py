@@ -10,12 +10,24 @@ if len(sys.argv) != 4:
     print("Parameter Fehler")
     exit(1)
 
-f = open(path, "r")
-text = f.read()
+if not path.endswith(".txt"):
+    print("Dateityp Fehler")
+    exit(2)
+
+try:
+    f = open(path, "r")
+    text = f.read()
+except IOError:
+    print("Datei Fehler")
+    exit(3)
 
 if len(key) != 2:
     print("Schlüssel Fehler")
-    exit(2)
+    exit(4)
+if not (key[0].isalpha() & key[1].isalpha()):
+    print("Schlüssel Fehler")
+    exit(5)
+
 
 a = ac.decode(key[0])[0]
 b = ac.decode(key[1])[0]
@@ -26,6 +38,5 @@ elif modus == "d":
     print(ac.acDecrypt(a, b, text))
 else:
     print("Modus Fehler")
+    exit(6)
 
-
-#def compute_frequencyTable(char_list):
