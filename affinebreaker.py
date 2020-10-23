@@ -27,5 +27,5 @@ broken_text = ablib.analyzeCipherText(cipher, keyPairs)
 
 print("Found " + str(len(broken_text)) + " possible Plaintexts")
 for i in broken_text:
-    i = (i[:50] ) if len(i) > 50 else i
+    i = (i[:50]) if len(i) > 50 else i
     print(i)

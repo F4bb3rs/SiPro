@@ -16,7 +16,7 @@ def encode(list):
 key_table = {1: 1, 3: 9, 5: 21, 7: 15, 9: 3, 11: 19, 15: 7, 17: 23, 19: 11, 21: 5, 23: 17, 25: 25}
 
 def checkKey(a,b):
-    if abs(b) > 27:
+    if b > 27 or b < 0:
         print("b out of range" + str(b))
         return False
     if not a in key_table:

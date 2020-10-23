@@ -37,7 +37,7 @@ def analyzeCipherText(cipher_text, char_pairs):
     possible_plains = []
     for pair in char_pairs:
         a = (3 * (pair[0] - pair[1])) % 26
-        b = pair[1] - 4 * a
+        b = (pair[1] - 4 * a) % 26
         decoded = aclib.acDecrypt(a, b, cipher_text)
         if isinstance(decoded, str) and len(decoded) > 0:
             possible_plains.append(decoded)
