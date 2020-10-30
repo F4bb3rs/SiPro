@@ -36,19 +36,19 @@ def acEncrypt(a, b, plain_text):
     return secret.upper()
 
 
-def acDecrypt(a, b, cipher):
+def acDecrypt(a, b, cipher_text):
     if not checkKey(a, b):
         return ""
     secret = []
-    decoded_list = decode(cipher)
+    decoded_list = decode(cipher_text)
     for i in decoded_list:
         secret.append(((i - b) * key_table[a]) % 26)
     secret = encode(secret)
-    return secret.lower()
+    return secret
 
 
 
-
+print(acDecrypt(decode("p")[0],decode("i")[0],"IFFYVQMJYFFDQ"))
 
 #cipher= "MVLCDIUEGCXHDEKWSXMLUMEILCJWCVWKXVRCXPSEMVKEEKEGCXHDGMDKGMLFCSLIEKWSXKWCOJSLKXEUELKOUCSDCVLOIAKOCVKUUCSDCVLKNJIVDIVDPCLLCOHMVKUCSDCVLESXZMZKWXUJLCYXIJFUFCHDEYXKILJXCOMEKIELFKLKWFVCHCYULCJXCZMDKEKWSXMLUMVWUPKXEJIWKIOIBMVYHUKVCSYFVCHMLKXILSXKKNMELEIPCSLFCGLCMOJHKOKVLWXUJLCYXIJFUIVDFCGLCMVWCXJCXILKMLMVLCXKIHGCXHDEUELKOE"
 #char_list = aclib.decode(cipher)
