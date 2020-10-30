@@ -18,15 +18,16 @@ except IOError:  # Ausgabe von Fehler falls nicht möglich
     print("Datei Fehler")
     exit(3)
 
-# Aufruf aller benötigten Funktionen zum entschlüsseln
-char_list = aclib.decode(cipher)    # decodieren von Buchstaben zu Zahlen
-freqTable = ablib.compute_frequencyTable(char_list)  # erstellen der Häufigkeitstabelle
-mostFrequent = ablib.computeMostFrequentChars(freqTable, 10)  # finden der n Häufigsten Zahlen
-keyPairs = ablib.computeKeyPairs(mostFrequent)  # erstellen der Zahlenpaare
-broken_text = ablib.analyzeCipherText(cipher, keyPairs)  # finden aller möglichen Klartexte unter Verwendung der
-# Zahlenpaare und des anfänglichen verschlüsselten Textes
+# Aufruf aller benötigten Funktionen zum Entschlüsseln. Funktionen geben als Rückgabe die Übergabeparameter für die
+# nächste Funktion aus
+char_list = aclib.decode(cipher)    # Decodieren von Buchstaben zu Zahlen
+freqTable = ablib.compute_frequencyTable(char_list)  # Erstellen der Häufigkeitstabelle
+mostFrequent = ablib.computeMostFrequentChars(freqTable, 10)  # Finden der n Häufigsten Zahlen
+keyPairs = ablib.computeKeyPairs(mostFrequent)  # Erstellen der Zahlenpaare
+broken_text = ablib.analyzeCipherText(cipher, keyPairs)  # Finden aller möglichen Klartexte unter Verwendung der
+# Zahlenpaare und des Geheimtextes
 
-print("Found " + str(len(broken_text)) + " possible Plaintexts")  # ausgabe der Anzahl der gefundenen Texte
+print("Found " + str(len(broken_text)) + " possible Plaintexts")  # Ausgabe der Anzahl der gefundenen Texte
 for i in broken_text:
     i = (i[:50]) if len(i) > 50 else i
     print(i)  # Ausgabe der ersten 50 Zeichen jedes möglichen entschlüsselten Textes
