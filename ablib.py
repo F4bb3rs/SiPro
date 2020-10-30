@@ -12,6 +12,11 @@ def compute_frequencyTable(char_list):
     return frequency_table  # gebe das Dictionary mit den enthaltenen Zahlen und ihrer Häufigkeit zurück
 
 
+def printFrequencyTable(freq_table):
+    for x in freq_table:
+        print(chr(x+97), " : ", freq_table[x])
+
+
 def computeMostFrequentChars(freq_table, n):
     shorter = []  # leere Liste erstellen
     sortedTable = sorted(freq_table.items(), key=lambda x: (x[1], x[0]), reverse=True)
