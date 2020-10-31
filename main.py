@@ -41,11 +41,3 @@ def analyzeCipherText(cipher_text, char_pairs):
         decoded = aclib.acDecrypt(a, b, cipher_text)
         if isinstance(decoded, str):
             print(decoded)
-
-#cipher= "MVLCDIUEGCXHDEKWSXMLUMEILCJWCVWKXVRCXPSEMVKEEKEGCXHDGMDKGMLFCSLIEKWSXKWCOJSLKXEUELKOUCSDCVLOIAKOCVKUUCSDCVLKNJIVDIVDPCLLCOHMVKUCSDCVLESXZMZKWXUJLCYXIJFUFCHDEYXKILJXCOMEKIELFKLKWFVCHCYULCJXCZMDKEKWSXMLUMVWUPKXEJIWKIOIBMVYHUKVCSYFVCHMLKXILSXKKNMELEIPCSLFCGLCMOJHKOKVLWXUJLCYXIJFUIVDFCGLCMVWCXJCXILKMLMVLCXKIHGCXHDEUELKOE"
-#char_list = aclib.decode(cipher)
-#freqTable = compute_frequencyTable(char_list)
-#mostFrequent = computeMostFrequentChars(freqTable, 10)
-#keyPairs = computeKeyPairs(mostFrequent)
-#analyzeCipherText(cipher, keyPairs)
-

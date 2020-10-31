@@ -13,8 +13,8 @@ def compute_frequencyTable(char_list):
 
 
 def printFrequencyTable(freq_table):
-    for x in freq_table:
-        print(chr(x+97), " : ", freq_table[x])
+    for x in freq_table:    #iteriere liste
+        print(chr(x+97), " : ", freq_table[x])  #Gebe Zeichen und Häufigkeit in Konsole aus
 
 
 def computeMostFrequentChars(freq_table, n):
@@ -34,9 +34,6 @@ def computeKeyPairs(char_list):
         for j in char_clone:  # i wird mit jedem anderen char zu einem Paar kombiniert
             output.append((i, j))
     return output  # gebe die Liste mit den möglichen Keys
-
-
-
 
 
 def analyzeCipherText(cipher_text, char_pairs):
