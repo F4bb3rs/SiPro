@@ -32,6 +32,6 @@ print("Found " + str(len(broken_text)) + " possible Plaintexts")  # Ausgabe der 
 for i in broken_text:
     i = (i[:50]) if len(i) > 50 else i
     z += 1
-    if z is 7:
+    if z == 7:
         break
     print(i)  # Ausgabe der ersten 50 Zeichen jedes moeglichen entschluesselten Textes
