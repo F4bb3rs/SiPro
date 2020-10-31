@@ -21,7 +21,7 @@ except IOError:  # Ausgabe von Fehler falls nicht möglich
 # Aufruf aller benötigten Funktionen zum Entschlüsseln. Funktionen geben als Rückgabe die Übergabeparameter für die
 # nächste Funktion aus
 char_list = aclib.decode(cipher)    # Decodieren von Buchstaben zu Zahlen
-freqTable = ablib.compute_frequencyTable(char_list)  # Erstellen der Häufigkeitstabelle
+freqTable = ablib.computeFrequencyTable(char_list)  # Erstellen der Häufigkeitstabelle
 mostFrequent = ablib.computeMostFrequentChars(freqTable, 10)  # Finden der n Häufigsten Zahlen
 keyPairs = ablib.computeKeyPairs(mostFrequent)  # Erstellen der Zahlenpaare
 broken_text = ablib.analyzeCipherText(cipher, keyPairs)  # Finden aller möglichen Klartexte unter Verwendung der
