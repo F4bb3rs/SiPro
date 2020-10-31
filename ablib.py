@@ -1,7 +1,7 @@
 import aclib  # importiere die Bibliothek aclib
 
 
-def compute_frequencyTable(char_list):
+def computeFrequencyTable(char_list):
     frequency_table = {}  # Leeres Dictionary erstellen
     char_list.sort()  # Eingabe aufsteigend sortieren
     for i in char_list:  # Über Eingabeliste iterienen
@@ -13,8 +13,8 @@ def compute_frequencyTable(char_list):
 
 
 def printFrequencyTable(freq_table):
-    for x in freq_table:    #iteriere liste
-        print(chr(x+97), " : ", freq_table[x])  #Gebe Zeichen und Häufigkeit in Konsole aus
+    for x in freq_table: #für alle Schlüssel
+        print(chr(x+97), " : ", freq_table[x])#Ausgabe von Schlüssel als Kleinbuchstabe mit zugehörigem Wert
 
 
 def computeMostFrequentChars(freq_table, n):
@@ -34,6 +34,9 @@ def computeKeyPairs(char_list):
         for j in char_clone:  # i wird mit jedem anderen char zu einem Paar kombiniert
             keyPairs.append((i, j))
     return keyPairs  # Gebe die Liste mit den möglichen Keys
+
+
+
 
 
 def analyzeCipherText(cipher_text, char_pairs):
