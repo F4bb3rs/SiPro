@@ -27,7 +27,11 @@ keyPairs = ablib.computeKeyPairs(mostFrequent)  # Erstellen der Zahlenpaare
 broken_text = ablib.analyzeCipherText(cipher, keyPairs)  # Finden aller m?glichen Klartexte unter Verwendung der
 # Zahlenpaare und des Geheimtextes
 
+z = 0
 print("Found " + str(len(broken_text)) + " possible Plaintexts")  # Ausgabe der Anzahl der gefundenen Texte
 for i in broken_text:
     i = (i[:50]) if len(i) > 50 else i
+    z += 1
+    if z is 7:
+        break
     print(i)  # Ausgabe der ersten 50 Zeichen jedes m?glichen entschl?sselten Textes
