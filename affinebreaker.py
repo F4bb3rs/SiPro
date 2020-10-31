@@ -22,12 +22,16 @@ except IOError:  # Ausgabe von Fehler falls nicht möglich
 # nächste Funktion aus
 char_list = aclib.decode(cipher)    # Decodieren von Buchstaben zu Zahlen
 freqTable = ablib.computeFrequencyTable(char_list)  # Erstellen der Häufigkeitstabelle
-mostFrequent = ablib.computeMostFrequentChars(freqTable, 10)  # Finden der n Häufigsten Zahlen
+mostFrequent = ablib.computeMostFrequentChars(freqTable, 6)  # Finden der n Häufigsten Zahlen
 keyPairs = ablib.computeKeyPairs(mostFrequent)  # Erstellen der Zahlenpaare
 broken_text = ablib.analyzeCipherText(cipher, keyPairs)  # Finden aller möglichen Klartexte unter Verwendung der
 # Zahlenpaare und des Geheimtextes
 
+z = 0
 print("Found " + str(len(broken_text)) + " possible Plaintexts")  # Ausgabe der Anzahl der gefundenen Texte
 for i in broken_text:
     i = (i[:50]) if len(i) > 50 else i
+    z += 1
+    if z is 7:
+        break
     print(i)  # Ausgabe der ersten 50 Zeichen jedes möglichen entschlüsselten Textes
