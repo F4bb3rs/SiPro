@@ -12,19 +12,19 @@ if not path.endswith(".txt"):  # Test auf Dateityp
     print("Dateityp Fehler")
     exit(2)
 try:
-    file = open(path, "r")  # Versuch die txt-Datei zu ?ffnen
+    file = open(path, "r")  # Versuch die txt-Datei zu oeffnen
     cipher = file.read()
-except IOError:  # Ausgabe von Fehler falls nicht m?glich
+except IOError:  # Ausgabe von Fehler falls nicht moeglich
     print("Datei Fehler")
     exit(3)
 
-# Aufruf aller ben?tigten Funktionen zum Entschl?sseln. Funktionen geben als R?ckgabe die ?bergabeparameter f?r die
-# n?chste Funktion aus
+# Aufruf aller benoetigten Funktionen zum Entschluesseln. Funktionen geben als Rueckgabe die uebergabeparameter fuer die
+# naechste Funktion aus
 char_list = aclib.decode(cipher)    # Decodieren von Buchstaben zu Zahlen
-freqTable = ablib.computeFrequencyTable(char_list)  # Erstellen der H?ufigkeitstabelle
-mostFrequent = ablib.computeMostFrequentChars(freqTable, 6)  # Finden der n H?ufigsten Zahlen
+freqTable = ablib.computeFrequencyTable(char_list)  # Erstellen der Haeufigkeitstabelle
+mostFrequent = ablib.computeMostFrequentChars(freqTable, 6)  # Finden der n Haeufigsten Zahlen
 keyPairs = ablib.computeKeyPairs(mostFrequent)  # Erstellen der Zahlenpaare
-broken_text = ablib.analyzeCipherText(cipher, keyPairs)  # Finden aller m?glichen Klartexte unter Verwendung der
+broken_text = ablib.analyzeCipherText(cipher, keyPairs)  # Finden aller moeglichen Klartexte unter Verwendung der
 # Zahlenpaare und des Geheimtextes
 
 z = 0
@@ -34,4 +34,4 @@ for i in broken_text:
     z += 1
     if z is 7:
         break
-    print(i)  # Ausgabe der ersten 50 Zeichen jedes m?glichen entschl?sselten Textes
+    print(i)  # Ausgabe der ersten 50 Zeichen jedes moeglichen entschluesselten Textes
